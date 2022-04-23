@@ -1,0 +1,10 @@
+//#####################################
+//It is the config file for the PsyTexx
+//#####################################
+
+width   1027
+height  768
+flip    0
+buffer  1024
+
+@

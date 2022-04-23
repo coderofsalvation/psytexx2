@@ -1,0 +1,22 @@
+Big thanks to:
+
+Afalina ( my lovely wife )
+Eugene Zolotov <sentinel@knoppix.ru> www.linux.su ( help with promotion )
+Armin van Buuren ( for his great mixes )
+Cvetochek  ( beautifull eyes in the "Blue Bird" skin )
+Blaker  ( help with DirectDraw and other )
+William R. Sherman   ( some OpenGL code for X11 )
+Tony Rogvall <tony@bluetail.com>   ( X11 events handling )
+Jace <bewine@entermail.net>  ( TapWave Zodiac porting + donation )
+Grzegorz Juraszek <feifei@epf.pl>  ( T|5 porting + donation )
+Michael Broxson  ( donation )
+Carlos Chin Guerrero  ( donation )
+Javier Prol  ( donation )
+Jose Angel Sanchez Garcia  ( donation )
+Nathan Price  ( donation )
+Giancarlo Vettor <primalangels@hotmail.com>
+Goglus <goglus@mail.ru>
+Eugenia Ovchinnikova <jeannie@etel.ru>
+Alexander Kireev <alexander@kireev.ru>
+Slavyana <solveig@mail.ru>
+Olga Erofeeva <erofeeva-olga@mail.ru>

@@ -1,0 +1,173 @@
+<HTML>
+
+<HEAD><TITLE>:: PsyTexx v2 manual ::</TITLE></HEAD>
+
+<BODY> 
+
+<br>
+<a href="#tracker">What is Music Tracker?</a><br>
+<a href="#psytexx">What is PsyTexx?</a><br>
+<a href="#gui">PsyTexx user interface</a><br>
+<a href="#keys">Keyboard shortcuts</a><br>
+<a href="#compiling">Compiling</a><br>
+<a href="#config">PsyTexx Config File (file with an options)</a><br>
+<a href="#skins">PsyTexx Skins</a><br>
+<a href="#fonts">PsyTexx Fonts</a><br>
+<a href="#contact">Contact info</a><br>
+
+<br><br>
+
+<a name="tracker"></a>
+<hr>
+<br>
+<b>What is Music Tracker?</b><br><br>
+Tracker is the generic term for a class of software music sequencers which, in their purest form, allow the user to arrange sound samples stepwise on a timeline across several channels.
+A tracker's interface is primarily numeric; notes are entered via the keyboard, whilst length, parameters, effects and so forth are entered in hexadecimal. A complete song consists of several small multi-channel patterns chained together via a master list.
+<br><br>
+Other info is here: <a href="http://en.wikipedia.org/wiki/Tracker">http://en.wikipedia.org/wiki/Tracker</a><br>
+<br>
+
+<a name="psytexx"></a>
+<hr>
+<br>
+<b>What is PsyTexx?</b><br><br>
+PsyTexx is the cross-platform music tracker based on the XM (FastTracker eXtended Module) format. Currently it's available for a following OS: Windows, Linux (X11 and text console) and PalmOS.
+<br><br>
+Official homepage: <a href="http://www.warmplace.ru">www.warmplace.ru</a>
+<br>
+<br>
+
+<a name="gui"></a>
+<hr>
+<br>
+<b>PsyTexx user interface</b><br><br>
+<center>
+<img src="manual1.png"><br><br>
+<img src="manual2.png"><br><br>
+<img src="manual3.png">
+</center>
+<br><hr>
+
+<a name="keys"></a>
+<br>
+<b>Keyboard shortcuts</b><br><br>
+Space - Record mode ON/OFF<br>
+F1..F7 - Select octave 1..7<br>
+Shift + F3 - Cut a channel<br>
+Shift + F4 - Copy a channel<br>
+Shift + F5 - Paste a channel<br>
+Ctrl + F3 - Cut a pattern<br>
+Ctrl + F4 - Copy a pattern<br>
+Ctrl + F5 - Paste a pattern<br>
+Tab - Go to a next channel<br>
+Shift + Tab - Go to a previous channel<br>
+Down - Go to a next line<br>
+Up - Go to a previous line<br>
+Escape - Exit to OS
+<br>
+<br><hr>
+
+<a name="compiling"></a>
+<br>
+<b>Compiling</b><br><br>
+1. Change the core/core.h file for your platform. <br>
+For example, for Win32 uncomment a following lines: <br>
+<font color=blue>
+<i>
+#define COLOR32BITS <br>
+#define NONPALM <br>
+#define WIN <br>
+#define DIRECTX <br>
+</i>
+</font>
+<br>
+For the PalmOS users:<br>
+2. Go to the PsyTexx_PalmOS directory.<br>
+3. Copy makefile from "ARMFiles" dir (for the native ARM-code) or from "M68KFiles" (for more slow but compatible code) to the PsyTexx_PalmOS dir.<br>
+4. Edit line with reference to the PalmOS SDK dir in the makefile: for example, <i>SDK = /usr/sdk-5/<br></i>
+5. Type "make"<br>
+6. If no errors, install psytexx.prc to your device.<br>
+PalmOS compiling tools:<br>
+<font color=blue>
+m68k-palmos-gcc version 2.95.3-kgpd 20010315 (release)<br>
+arm-palmos-gcc version 3.2.2 (prc-tools)<br>
+arm-elf-gcc version 3.2.1 (ecos-gnutools-v1.4)<br>
+pilrc version 3.0<br>
+</font>
+<br>
+For the Linux users:<br>
+2. Go to the PsyTexx_linux directory.<br>
+3. Uncomment necessary lines (for console, OpenGL or X11) in the begining of the makefile. For example:<br>
+<font color=blue>
+<i># X11 libs: <br>
+LIB = -lpthread -lstdc++ -lX11<br></i>
+</font>
+4. Type "make"<br>
+5. If no errors, type "./psytexx"<br>
+Linux compiling tools:<br>
+<font color=blue>
+gcc version 3.3.5 (Debian 1:3.3.5-8)<br>
+valgrind version 2.2.0 (Memory debugger for x86)<br>
+</font>
+<br>
+For the Win32 users:<br>
+2. Check for the VisualStudio project in the PsyTexx_win32 directory.<br>
+<br>
+<hr>
+
+<a name="config"></a>
+<br>
+<b>PsyTexx Config File (file with an options)</b><br><br>
+It is the simple text file called "prop_config" (in the directory with PsyTexx) with a some lines like this:<br>
+<font color=blue>
+<pre>
+//#####################################
+//It is the config file for the PsyTexx
+//#####################################
+
+width   320
+height  320
+flip    0
+buffer  1024
+
+@
+</pre>
+</font>
+There are:<br>
+<i>width, height</i> - width and height of the window;<br>
+<i>flip</i> - flip screen mode for some devices; values: 0/1;<br>
+<i>buffer</i> - sound buffer size (in samples); buffer_size_in_bytes = buffer * (bits_per_channel / 8) * number_of_channels;<br>
+<i>@</i> - end of config file (don't forget about this symbol!).<br>
+<br><hr>
+
+<a name="skins"></a>
+<br>
+<b>PsyTexx Skins</b><br><br>
+What is skin?<br>
+In a few words it's a some beautifull BMP-image, that will be background image in your PsyTexx. 
+And remember, that the lower line in this image is the color palette (color gradient) for the PsyTexx user interface.<br><br>
+How to use?<br>
+Your skin must be called as "back.bmp". Just put it into the directory with the PsyTexx. 
+For the PalmOS users: convert "back.bmp" to the "back.pdb" (use the file2pdb converter) and install it to Palm.
+<br>
+<br><hr>
+
+<a name="fonts"></a>
+<br>
+<b>PsyTexx Fonts</b><br><br>
+What is font?<br>
+It is a BMP-image called "font.bmp".<br><br>
+How to use?<br>
+Just put "font.bmp" into the directory with the PsyTexx. (For the PalmOS users: convert "back.bmp" to the "back.pdb" (use the file2pdb converter) and install it to Palm)
+And then press a "FNT" key on the virtual keyboard for a current font changing.<br>
+<br>
+By default PsyTexx has a built-in 8x8 font.
+<br>
+<br><hr>
+
+<a name="contact"></a>
+<br>
+Please, send all your comments and founded errors (in this manual) to <a href="mailto:nightradio@gmail.com">nightradio@gmail.com</a><br>
+And sorry for my "english"... :)
+
+</BODY> 

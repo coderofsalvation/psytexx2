@@ -1,0 +1,17 @@
+0: 
+1: 
+2: PsyTexx2 alpha 0.5
+3: Apr 23 2022
+4: 
+5: STARTING...
+6: 
+7: 
+8: MAIN: trying to load font
+9: MAIN: device start
+10: MAIN: screenX = 1027
+11: MAIN: screenY = 768
+12: MAIN: creating g_screen
+13: MAIN: creating t_screen
+14: MAIN: creating screen part
+15: MAIN: set palette
+16: Can't open sound device
